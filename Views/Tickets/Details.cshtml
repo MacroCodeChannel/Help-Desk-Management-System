@@ -1,0 +1,64 @@
+﻿@model HelpDeskSystem.Models.Ticket
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <div class="row">
+        <table class="table"
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                 <td>
+                    @Html.DisplayFor(model => model.Title)
+                 </td>
+                  <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                 <td>
+                    @Html.DisplayFor(model => model.Description)
+                 </td>
+            </tr>
+         <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                 <td>
+                    @Html.DisplayFor(model => model.Status)
+                 </td>
+                  <th>
+                    @Html.DisplayNameFor(model => model.Priority)
+                </th>
+                 <td>
+                    @Html.DisplayFor(model => model.Priority)
+                 </td>
+            </tr>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedBy)
+                </th>
+                 <td>
+                    @Html.DisplayFor(model => model.CreatedBy.FullName)
+                 </td>
+                  <th>
+                    @Html.DisplayNameFor(model => model.CreatedOn)
+                </th>
+                 <td>
+                    @Html.DisplayFor(model => model.CreatedOn)
+                 </td>
+            </tr>
+
+      </table>
+
+    </div>
+</div>
+<div>
+    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a class="btn btn-primary" asp-action="Index">Back to List</a>
+</div>
