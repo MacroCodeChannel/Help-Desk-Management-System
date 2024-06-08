@@ -1,83 +1,133 @@
 ﻿@page
 @model LoginModel
-
 @{
-    ViewData["Title"] = "Log in";
+    Layout = null;
 }
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="~/assets/images/favicon-32x32.png" type="image/png" />
+    <!-- Bootstrap CSS -->
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/css/bootstrap-extended.css" rel="stylesheet" />
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+    <link href="~/assets/css/icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/assets/cdn.jsdelivr.net/npm/bootstrap-icons%401.5.0/font/bootstrap-icons.css">
 
-<h1>@ViewData["Title"]</h1>
-<div class="row">
-    <div class="col-md-4">
-        <section>
-            <form id="account" method="post">
-                <h2>Use a local account to log in.</h2>
-                <hr />
-                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-                <div class="form-floating mb-3">
-                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                    <label asp-for="Input.Email" class="form-label">Email</label>
-                    <span asp-validation-for="Input.Email" class="text-danger"></span>
-                </div>
-                <div class="form-floating mb-3">
-                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
-                    <label asp-for="Input.Password" class="form-label">Password</label>
-                    <span asp-validation-for="Input.Password" class="text-danger"></span>
-                </div>
-                <div class="checkbox mb-3">
-                    <label asp-for="Input.RememberMe" class="form-label">
-                        <input class="form-check-input" asp-for="Input.RememberMe" />
-                        @Html.DisplayNameFor(m => m.Input.RememberMe)
-                    </label>
-                </div>
-                <div>
-                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
-                </div>
-                <div>
-                    <p>
-                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-                    </p>
-                    <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
-                    </p>
-                    <p>
-                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
-                    </p>
-                </div>
-            </form>
-        </section>
-    </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h3>Use another service to log in.</h3>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins!)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
+    <!-- loader-->
+    <link href="~/assets/css/pace.min.css" rel="stylesheet" />
+
+    <title>Help Desk</title>
+</head>
+
+<body class="bg-surface">
+
+    <!--start wrapper-->
+    <div class="wrapper">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-white rounded-0 border-bottom">
+                <div class="container">
+                    <h3>Help Desk Management System</h3>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-2 mb-lg-0 align-items-center">
+                        </ul>
+
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        </ul>
+                        <div class="d-flex ms-3 gap-3">
+                            <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl" class="btn btn-primary btn-sm px-4 radius-30">Login</a>
+                            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="btn btn-white btn-sm px-4 radius-30">Register</a>
                         </div>
-                    </form>
-                }
-            }
-        </section>
-    </div>
-</div>
+                    </div>
+                </div>
+            </nav>
+        </header>
 
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
+        <!--start content-->
+        <main class="authentication-content">
+            <div class="container">
+                <div class="mt-4">
+                    <div class="card rounded-0 overflow-hidden shadow-none border mb-5 mb-lg-0">
+                        <div class="row g-0">
+                            <div class="col-12 order-1 col-xl-8 d-flex align-items-center justify-content-center border-end">
+                                <img src="~/assets/images/error/auth-img-7.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="col-12 col-xl-4 order-xl-2">
+                                <div class="card-body p-4 p-sm-5">
+                                    <h5 class="card-title">Sign In</h5>
+                                    <p class="card-text mb-4">See your growth and get consulting support!</p>
+                                    <form class="form-body" id="account" method="post">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                                        <div class="row g-3">
+                                            <div class="col-12">
+                                                <label for="inputEmailAddress" class="form-label">Email Address</label>
+                                                <div class="ms-auto position-relative">
+                                                    <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-envelope-fill"></i></div>
+                                                    <input asp-for="Input.Email" type="email" class="form-control radius-30 ps-5" id="inputEmailAddress" placeholder="Email">
+                                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="inputChoosePassword" class="form-label">Enter Password</label>
+                                                <div class="ms-auto position-relative">
+                                                    <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-lock-fill"></i></div>
+                                                    <input asp-for="Input.Password" type="password" class="form-control radius-30 ps-5" id="inputChoosePassword" placeholder="Password">
+                                                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" asp-for="Input.RememberMe" type="checkbox" id="flexSwitchCheckChecked">
+                                                    <label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 text-end">
+                                                <a href="./ForgotPassword">Forgot Password ?</a>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="d-grid">
+                                                    <button type="submit" class="btn btn-primary radius-30">Sign In</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="login-separater text-center">
+                                                    <span>OR SIGN IN WITH EMAIL</span>
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 text-center">
+                                                <p class="mb-0">Don't have an account yet? <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Sign up here</a></p>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!--end page main-->
+
+        <footer class="bg-white border-top p-3 text-center fixed-bottom">
+            <p class="mb-0"> Help Desk Management System Copyright © @DateTime.Now.Year. All right reserved. Designed and Developed by Macro Code</p>
+        </footer>
+
+    </div>
+    <!--end wrapper-->
+    <!-- Bootstrap bundle JS -->
+    <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+    <!--plugins-->
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/js/pace.min.js"></script>
+</body>
+
+</html>

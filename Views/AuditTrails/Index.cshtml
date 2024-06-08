@@ -1,0 +1,67 @@
+﻿@model IEnumerable<HelpDeskSystem.Models.AuditTrail>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="card rounded-4">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <h6 class="mb-0">Recent Audit Trails</h6>
+        </div>
+
+        <table class="table table-bordered table-responsive table-hover table-responsive-lg">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Action)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Module)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AffectedTable)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TimeStamp)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IpAddress)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.User)
+                    </th>
+                    <th>View</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Action)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Module)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AffectedTable)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TimeStamp)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IpAddress)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.User.FullName)
+                        </td>
+                        <td>
+                            <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

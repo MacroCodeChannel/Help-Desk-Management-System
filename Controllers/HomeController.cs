@@ -1,5 +1,7 @@
+using HelpDeskSystem.Data;
 using HelpDeskSystem.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace HelpDeskSystem.Controllers
@@ -8,14 +10,29 @@ namespace HelpDeskSystem.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+
+        private readonly ApplicationDbContext _context;
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            if (!User.Identity.IsAuthenticated)
+            {
+
+                return this.Redirect("~/identity/account/login");
+            }
+            else
+            {
+                var tickets = await _context.Tickets
+                .Include(t => t.CreatedBy)
+                .OrderBy(x => x.CreatedOn)
+                .ToListAsync();
+                return View(tickets);
+            }
         }
 
         public IActionResult Privacy()

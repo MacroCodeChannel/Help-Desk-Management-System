@@ -80,7 +80,23 @@ namespace HelpDeskSystem.Controllers
             comment.CreatedById = userId;
             _context.Add(comment);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+
+            //Log the Audit Trail
+            var activity = new AuditTrail
+            {
+                Action = "Create",
+                TimeStamp = DateTime.Now,
+                IpAddress = HttpContext.Connection.RemoteIpAddress?.ToString(),
+                UserId = userId,
+                Module = "Comments",
+                AffectedTable = "Comments"
+            };
+
+            _context.Add(activity);
+            await _context.SaveChangesAsync();
+
+
+            return RedirectToAction(nameof(Index));
           
             ViewData["CreatedById"] = new SelectList(_context.Users, "Id", "FullName", comment.CreatedById);
             ViewData["TicketId"] = new SelectList(_context.Tickets, "Id", "Title", comment.TicketId);
