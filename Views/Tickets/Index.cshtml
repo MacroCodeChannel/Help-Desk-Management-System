@@ -1,4 +1,4 @@
-﻿@model IEnumerable<HelpDeskSystem.Models.Ticket>
+﻿@model HelpDeskSystem.ViewModels.TicketViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -22,13 +22,13 @@
                         @Html.DisplayNameFor(model => model.Title)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Description)
+                        @Html.DisplayNameFor(model => model.StatusId)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Status)
+                        @Html.DisplayNameFor(model => model.PriorityId)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Priority)
+                        @Html.DisplayNameFor(model => model.SubCategoryId)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.CreatedBy)
@@ -43,7 +43,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
+                @foreach (var item in Model.Tickets)
                 {
                     <tr>
                         <td>
@@ -53,13 +53,13 @@
                             @Html.DisplayFor(modelItem => item.Title)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Description)
+                            @Html.DisplayFor(modelItem => item.Status.Description)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Status)
+                            @Html.DisplayFor(modelItem => item.Priority.Description)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Priority)
+                            @Html.DisplayFor(modelItem => item.SubCategory.Name)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.CreatedBy.FullName)

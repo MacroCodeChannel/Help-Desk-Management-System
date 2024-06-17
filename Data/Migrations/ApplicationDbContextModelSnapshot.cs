@@ -180,13 +180,17 @@ namespace HelpDeskSystem.Data.Migrations
                     b.ToTable("Comments");
                 });
 
-            modelBuilder.Entity("HelpDeskSystem.Models.Ticket", b =>
+            modelBuilder.Entity("HelpDeskSystem.Models.SystemCode", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedById")
                         .IsRequired()
@@ -199,13 +203,98 @@ namespace HelpDeskSystem.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Priority")
+                    b.Property<string>("ModifiedById")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedById");
+
+                    b.HasIndex("ModifiedById");
+
+                    b.ToTable("SystemCodes");
+                });
+
+            modelBuilder.Entity("HelpDeskSystem.Models.SystemCodeDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Code")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Status")
+                    b.Property<string>("CreatedById")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ModifiedById")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("OrderNo")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SystemCodeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedById");
+
+                    b.HasIndex("ModifiedById");
+
+                    b.HasIndex("SystemCodeId");
+
+                    b.ToTable("SystemCodeDetails");
+                });
+
+            modelBuilder.Entity("HelpDeskSystem.Models.Ticket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Attachment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PriorityId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StatusId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SubCategoryId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -215,7 +304,94 @@ namespace HelpDeskSystem.Data.Migrations
 
                     b.HasIndex("CreatedById");
 
+                    b.HasIndex("PriorityId");
+
+                    b.HasIndex("StatusId");
+
+                    b.HasIndex("SubCategoryId");
+
                     b.ToTable("Tickets");
+                });
+
+            modelBuilder.Entity("HelpDeskSystem.Models.TicketCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedById")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedById");
+
+                    b.HasIndex("ModifiedById");
+
+                    b.ToTable("TicketCategories");
+                });
+
+            modelBuilder.Entity("HelpDeskSystem.Models.TicketSubCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedById")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("CreatedById");
+
+                    b.HasIndex("ModifiedById");
+
+                    b.ToTable("TicketSubCategories");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -381,6 +557,48 @@ namespace HelpDeskSystem.Data.Migrations
                     b.Navigation("Ticket");
                 });
 
+            modelBuilder.Entity("HelpDeskSystem.Models.SystemCode", b =>
+                {
+                    b.HasOne("HelpDeskSystem.Models.ApplicationUser", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HelpDeskSystem.Models.ApplicationUser", "ModifiedBy")
+                        .WithMany()
+                        .HasForeignKey("ModifiedById");
+
+                    b.Navigation("CreatedBy");
+
+                    b.Navigation("ModifiedBy");
+                });
+
+            modelBuilder.Entity("HelpDeskSystem.Models.SystemCodeDetail", b =>
+                {
+                    b.HasOne("HelpDeskSystem.Models.ApplicationUser", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HelpDeskSystem.Models.ApplicationUser", "ModifiedBy")
+                        .WithMany()
+                        .HasForeignKey("ModifiedById");
+
+                    b.HasOne("HelpDeskSystem.Models.SystemCode", "SystemCode")
+                        .WithMany()
+                        .HasForeignKey("SystemCodeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("CreatedBy");
+
+                    b.Navigation("ModifiedBy");
+
+                    b.Navigation("SystemCode");
+                });
+
             modelBuilder.Entity("HelpDeskSystem.Models.Ticket", b =>
                 {
                     b.HasOne("HelpDeskSystem.Models.ApplicationUser", "CreatedBy")
@@ -389,7 +607,72 @@ namespace HelpDeskSystem.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("HelpDeskSystem.Models.SystemCodeDetail", "Priority")
+                        .WithMany()
+                        .HasForeignKey("PriorityId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("HelpDeskSystem.Models.SystemCodeDetail", "Status")
+                        .WithMany()
+                        .HasForeignKey("StatusId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HelpDeskSystem.Models.TicketSubCategory", "SubCategory")
+                        .WithMany()
+                        .HasForeignKey("SubCategoryId");
+
                     b.Navigation("CreatedBy");
+
+                    b.Navigation("Priority");
+
+                    b.Navigation("Status");
+
+                    b.Navigation("SubCategory");
+                });
+
+            modelBuilder.Entity("HelpDeskSystem.Models.TicketCategory", b =>
+                {
+                    b.HasOne("HelpDeskSystem.Models.ApplicationUser", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("HelpDeskSystem.Models.ApplicationUser", "ModifiedBy")
+                        .WithMany()
+                        .HasForeignKey("ModifiedById")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("CreatedBy");
+
+                    b.Navigation("ModifiedBy");
+                });
+
+            modelBuilder.Entity("HelpDeskSystem.Models.TicketSubCategory", b =>
+                {
+                    b.HasOne("HelpDeskSystem.Models.TicketCategory", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HelpDeskSystem.Models.ApplicationUser", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HelpDeskSystem.Models.ApplicationUser", "ModifiedBy")
+                        .WithMany()
+                        .HasForeignKey("ModifiedById");
+
+                    b.Navigation("Category");
+
+                    b.Navigation("CreatedBy");
+
+                    b.Navigation("ModifiedBy");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -4,61 +4,77 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<div class="card rounded-4">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <h6 class="mb-0">Ticket Details </h6>
+        </div>
+        <hr />
+        <div class="row">
+            <table class="table table-bordered table-responsive table-hover table-responsive-lg">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Title)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Description)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StatusId)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Status.Description)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PriorityId)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Priority.Description)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedBy)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.CreatedBy.FullName)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedOn)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.CreatedOn)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SubCategoryId)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.SubCategory.Name)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Attachment)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Attachment)
+                    </td>
+                    
+                </tr>
 
-<div>
-    <h4>Ticket</h4>
-    <hr />
-    <div class="row">
-        <table class="table"
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Title)
-                </th>
-                 <td>
-                    @Html.DisplayFor(model => model.Title)
-                 </td>
-                  <th>
-                    @Html.DisplayNameFor(model => model.Description)
-                </th>
-                 <td>
-                    @Html.DisplayFor(model => model.Description)
-                 </td>
-            </tr>
-         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Status)
-                </th>
-                 <td>
-                    @Html.DisplayFor(model => model.Status)
-                 </td>
-                  <th>
-                    @Html.DisplayNameFor(model => model.Priority)
-                </th>
-                 <td>
-                    @Html.DisplayFor(model => model.Priority)
-                 </td>
-            </tr>
-        <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.CreatedBy)
-                </th>
-                 <td>
-                    @Html.DisplayFor(model => model.CreatedBy.FullName)
-                 </td>
-                  <th>
-                    @Html.DisplayNameFor(model => model.CreatedOn)
-                </th>
-                 <td>
-                    @Html.DisplayFor(model => model.CreatedOn)
-                 </td>
-            </tr>
-
-      </table>
-
+            </table>
+        </div>
     </div>
 </div>
-<div>
-    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+<div class="row">
+    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> 
     <a class="btn btn-primary" asp-action="Index">Back to List</a>
 </div>

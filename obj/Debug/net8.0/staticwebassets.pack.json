@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\HelpDeskSystem.bundle.scp.css"
     },
     {
+      "Id": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\wwwroot\\CustomJs\\TicketSystem.js",
+      "PackagePath": "staticwebassets\\CustomJs\\TicketSystem.js"
+    },
+    {
       "Id": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\wwwroot\\assets\\cdn.jsdelivr.net\\npm\\bootstrap-icons@1.10.5\\font\\bootstrap-icons.css",
       "PackagePath": "staticwebassets\\assets\\cdn.jsdelivr.net\\npm\\bootstrap-icons@1.10.5\\font\\bootstrap-icons.css"
     },

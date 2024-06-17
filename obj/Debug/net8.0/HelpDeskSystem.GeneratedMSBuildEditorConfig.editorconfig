@@ -250,6 +250,90 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/SystemCodeDetails/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzdGVtQ29kZURldGFpbHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/SystemCodeDetails/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzdGVtQ29kZURldGFpbHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/SystemCodeDetails/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzdGVtQ29kZURldGFpbHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/SystemCodeDetails/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzdGVtQ29kZURldGFpbHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/SystemCodeDetails/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzdGVtQ29kZURldGFpbHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/SystemCodes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzdGVtQ29kZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/SystemCodes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzdGVtQ29kZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/SystemCodes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzdGVtQ29kZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/SystemCodes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzdGVtQ29kZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/SystemCodes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzdGVtQ29kZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/TicketCategories/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/TicketCategories/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/TicketCategories/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/TicketCategories/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/TicketCategories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/TicketSubCategories/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0U3ViQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/TicketSubCategories/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0U3ViQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/TicketSubCategories/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0U3ViQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/TicketSubCategories/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0U3ViQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/TicketSubCategories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0U3ViQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/TicketSubCategories/SubCategories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0U3ViQ2F0ZWdvcmllc1xTdWJDYXRlZ29yaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/Tickets/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

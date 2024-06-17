@@ -8,27 +8,33 @@ using Microsoft.EntityFrameworkCore;
 using HelpDeskSystem.Data;
 using HelpDeskSystem.Models;
 using System.Security.Claims;
+using HelpDeskSystem.ViewModels;
+using System.Runtime.Intrinsics.X86;
 
 namespace HelpDeskSystem.Controllers
 {
     public class TicketsController : Controller
     {
         private readonly ApplicationDbContext _context;
-
-        public TicketsController(ApplicationDbContext context)
+         private readonly  IConfiguration _configuration;
+        public TicketsController(ApplicationDbContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
         }
 
         // GET: Tickets
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(TicketViewModel vm)
         {
-            var tickets =  await _context.Tickets
+            vm.Tickets =  await _context.Tickets
                 .Include(t => t.CreatedBy)
+                .Include(t=> t.SubCategory)
+                .Include(t => t.Priority)
+                .Include(t => t.Status)
                 .OrderBy(x=>x.CreatedOn)
                 .ToListAsync();
 
-            return View(tickets);
+            return View(vm);
         }
 
         // GET: Tickets/Details/5
@@ -41,6 +47,9 @@ namespace HelpDeskSystem.Controllers
 
             var ticket = await _context.Tickets
                 .Include(t => t.CreatedBy)
+                .Include (t=> t.SubCategory)
+                .Include(t => t.Status)
+                .Include(t => t.Priority)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (ticket == null)
             {
@@ -53,6 +62,9 @@ namespace HelpDeskSystem.Controllers
         // GET: Tickets/Create
         public IActionResult Create()
         {
+
+            ViewData["PriorityId"] = new SelectList(_context.SystemCodeDetails.Include(x=>x.SystemCode).Where(x=>x.SystemCode.Code== "Priority"), "Id", "Description");
+            ViewData["CategoryId"] = new SelectList(_context.TicketCategories, "Id", "Name");
             ViewData["CreatedById"] = new SelectList(_context.Users, "Id", "FullName");
             return View();
         }
@@ -62,8 +74,35 @@ namespace HelpDeskSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Ticket ticket)
+        public async Task<IActionResult> Create(TicketViewModel ticketvm, IFormFile attachment)
         {
+
+            if(attachment.Length > 0)
+            {
+                 var filename = "Ticket_Attachment"+ DateTime.Now.ToString("yyyymmddhhmmss")+"_"+ attachment.FileName;
+                var path = _configuration["FileSettings:UploadsFolder"]!;
+                var filepath = Path.Combine(path, filename);
+                var stream = new FileStream(filepath,FileMode.Create);
+                await attachment.CopyToAsync(stream);
+                ticketvm.Attachment = filename;
+            }
+
+
+            var pendingstatus = await _context
+                .SystemCodeDetails
+                .Include(x => x.SystemCode)
+                .Where(x => x.SystemCode.Code == "Status" && x.Code == "Pending")
+                .FirstOrDefaultAsync();
+                
+            Ticket ticket = new();
+            ticket.Id = ticketvm.Id;
+            ticket.Title = ticketvm.Title;
+            ticket.Description = ticketvm.Description;
+            ticket.StatusId = pendingstatus.Id;
+            ticket.PriorityId = ticketvm.PriorityId;
+            ticket.SubCategoryId = ticketvm.SubCategoryId;
+            ticket.Attachment = ticketvm.Attachment;
+
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             ticket.CreatedOn = DateTime.Now;
             ticket.CreatedById = userId;
@@ -84,6 +123,13 @@ namespace HelpDeskSystem.Controllers
 
             _context.Add(activity);
             await _context.SaveChangesAsync();
+
+            TempData["MESSAGE"] = "Ticket Details successfully Created";
+
+
+            ViewData["PriorityId"] = new SelectList(_context.SystemCodeDetails.Include(x => x.SystemCode).Where(x => x.SystemCode.Code == "Priority"), "Id", "Description");
+
+            ViewData["CategoryId"] = new SelectList(_context.TicketCategories, "Id", "Name");
 
             ViewData["CreatedById"] = new SelectList(_context.Users, "Id", "FullName", ticket.CreatedById);
 
@@ -126,6 +172,7 @@ namespace HelpDeskSystem.Controllers
                 {
                     _context.Update(ticket);
                     await _context.SaveChangesAsync();
+                    TempData["MESSAGE"] = "Ticket Details successfully Updated";
                 }
                 catch (DbUpdateConcurrencyException)
                 {

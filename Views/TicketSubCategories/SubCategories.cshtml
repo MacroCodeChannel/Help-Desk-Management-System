@@ -1,0 +1,69 @@
+﻿@model HelpDeskSystem.ViewModels.TicketSubCategoriesVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="card rounded-4">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <h6 class="mb-0">Ticket Sub-Categories</h6>
+        </div>
+        <table class="table table-bordered table-responsive table-hover table-responsive-lg">
+
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Category)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Code)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedBy)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedOn)
+                    </th>
+                    <th>View</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.TicketSubCategories)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Category.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Code)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedBy.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedOn)
+                        </td>
+                        <td>
+                            <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

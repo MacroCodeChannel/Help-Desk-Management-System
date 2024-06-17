@@ -4,42 +4,51 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
+<div class="card rounded-4">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <h6 class="mb-0">Delete Ticket Comment</h6>
+        </div>
+        <h3>Are you sure you want to delete this?</h3>
+        <hr />
+        <div class="row">
+            <table class="table table-bordered table-responsive table-hover table-responsive-lg">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Description)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Ticket)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.Ticket.Id)
+                    </td>
+                    </tr>
+                    <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedOn)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.CreatedOn)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedBy)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.CreatedBy.Id)
+                    </td>
+                </tr>
+            </table>
+        </div>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Comment</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Ticket)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Ticket.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CreatedOn)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CreatedOn)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CreatedBy)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CreatedBy.Id)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+    </div>
+</div>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Delete" class="btn btn-danger" /> |
+    <a class="btn btn-warning" asp-action="Index">Back to List</a>
+</form>
 </div>

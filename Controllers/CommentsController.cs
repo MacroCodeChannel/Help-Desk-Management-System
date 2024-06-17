@@ -95,6 +95,7 @@ namespace HelpDeskSystem.Controllers
             _context.Add(activity);
             await _context.SaveChangesAsync();
 
+            TempData["MESSAGE"] = "Comments Details successfully Created";
 
             return RedirectToAction(nameof(Index));
           
@@ -139,6 +140,8 @@ namespace HelpDeskSystem.Controllers
                 {
                     _context.Update(comment);
                     await _context.SaveChangesAsync();
+
+                    TempData["MESSAGE"] = "Comments Details successfully Updated";
                 }
                 catch (DbUpdateConcurrencyException)
                 {
