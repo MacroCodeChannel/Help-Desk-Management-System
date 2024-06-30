@@ -26,6 +26,9 @@ namespace HelpDeskSystem.Data
 
         public DbSet<SystemCodeDetail> SystemCodeDetails { get; set; }
 
+        public DbSet<Department> Departments { get; set; }
+        
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -38,7 +41,7 @@ namespace HelpDeskSystem.Data
 
             builder.Entity<Comment>()
                .HasOne(c => c.Ticket)
-               .WithMany()
+               .WithMany(c=>c.TicketComments)
                .HasForeignKey(c => c.TicketId)
                .OnDelete(DeleteBehavior.Restrict);
 

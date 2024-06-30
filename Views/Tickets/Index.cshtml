@@ -21,39 +21,55 @@
                     <th>
                         @Html.DisplayNameFor(model => model.Title)
                     </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.StatusId)
-                    </th>
+                   
                     <th>
                         @Html.DisplayNameFor(model => model.PriorityId)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.SubCategoryId)
                     </th>
+                    
                     <th>
                         @Html.DisplayNameFor(model => model.CreatedBy)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.CreatedOn)
                     </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StatusId)
+                    </th>
+                    <th>No of Comments</th>
                     <th>Comments</th>
                     <th>View</th>
                     <th>Edit</th>
-                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model.Tickets)
                 {
+                    var colorcode = "Red";
+                    if (item.Status.Code == "Resolved")
+                    {
+                        colorcode = "Greed";
+                    }
+                    else if (item.Status.Code == "InProgress")
+                    {
+                        colorcode = "Yellow";
+                    }
+                    else if (item.Status.Code == "Reassigned")
+                    {
+                        colorcode = "Purple";
+                    }
+                    else if (item.Status.Code == "AwaitingAssigment")
+                    {
+                        colorcode = "Red";
+                    }
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.Id)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Title)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Status.Description)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Priority.Description)
@@ -67,6 +83,12 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.CreatedOn)
                         </td>
+                        <td style="background-color:@colorcode">
+                            @Html.DisplayFor(modelItem => item.Status.Description)
+                        </td>
+                        <td style="text-align:center">
+                            <a asp-action="TicketsComments" asp-controller="Comments" asp-route-id="@item.Id"> @item.TicketComments.Count()</a>
+                        </td>
                         <td>
                             <a class="btn btn-secondary" asp-action="TicketsComments" asp-controller="Comments" asp-route-id="@item.Id">Comments</a>
                         </td>
@@ -75,9 +97,6 @@
                         </td>
                         <td>
                             <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                        </td>
-                        <td>
-                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                         </td>
                     </tr>
                 }

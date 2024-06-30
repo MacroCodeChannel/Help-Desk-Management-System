@@ -17,13 +17,14 @@ namespace HelpDeskSystem.Controllers
     {
         private readonly ApplicationDbContext _context;
          private readonly  IConfiguration _configuration;
+
         public TicketsController(ApplicationDbContext context, IConfiguration configuration)
         {
             _context = context;
             _configuration = configuration;
         }
 
-        // GET: Tickets
+        // GET:Tickets
         public async Task<IActionResult> Index(TicketViewModel vm)
         {
             vm.Tickets =  await _context.Tickets
@@ -31,6 +32,7 @@ namespace HelpDeskSystem.Controllers
                 .Include(t=> t.SubCategory)
                 .Include(t => t.Priority)
                 .Include(t => t.Status)
+                .Include(t=>t.TicketComments)
                 .OrderBy(x=>x.CreatedOn)
                 .ToListAsync();
 
@@ -38,25 +40,33 @@ namespace HelpDeskSystem.Controllers
         }
 
         // GET: Tickets/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? id, TicketViewModel vm)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var ticket = await _context.Tickets
+             vm.TicketDetails = await _context.Tickets
                 .Include(t => t.CreatedBy)
                 .Include (t=> t.SubCategory)
                 .Include(t => t.Status)
                 .Include(t => t.Priority)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (ticket == null)
+
+            vm.TicketComments = await _context.Comments
+                .Include(t => t.CreatedBy)
+                .Include(t => t.Ticket)
+                .Where(t=>t.TicketId==id)
+                .ToListAsync();
+                    
+
+            if (vm.TicketDetails == null)
             {
                 return NotFound();
             }
 
-            return View(ticket);
+            return View(vm);
         }
 
         // GET: Tickets/Create
@@ -136,6 +146,39 @@ namespace HelpDeskSystem.Controllers
             return RedirectToAction(nameof(Index));
             
         }
+
+        [HttpPost]
+        public async Task<IActionResult> AddComment(int id,TicketViewModel vm)
+        {
+            //Logged In User
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            Comment newcomment = new();
+            newcomment.TicketId = id;
+            newcomment.CreatedOn = DateTime.Now;
+            newcomment.CreatedById = userId;
+            newcomment.Description = vm.CommentDescription;
+            _context.Add(newcomment);
+            await _context.SaveChangesAsync();
+
+            //Log the Audit Trail
+            var activity = new AuditTrail
+            {
+                Action = "Create",
+                TimeStamp = DateTime.Now,
+                IpAddress = HttpContext.Connection.RemoteIpAddress?.ToString(),
+                UserId = userId,
+                Module = "Comments",
+                AffectedTable = "Comments"
+            };
+
+            _context.Add(activity);
+            await _context.SaveChangesAsync();
+
+            TempData["MESSAGE"] = "Comments Details successfully Created";
+
+            return RedirectToAction("Details",new { id=id});
+        }
+        
 
         // GET: Tickets/Edit/5
         public async Task<IActionResult> Edit(int? id)
