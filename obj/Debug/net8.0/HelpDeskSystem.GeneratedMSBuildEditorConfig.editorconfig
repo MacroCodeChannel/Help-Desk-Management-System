@@ -382,6 +382,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/Tickets/ReOpen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xSZU9wZW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/Tickets/Resolve.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xSZXNvbHZlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/Tickets/TicketAssignment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xUaWNrZXRBc3NpZ25tZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Software Projects/.NET Core Projects/HelpDeskSystem/Views/Users/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

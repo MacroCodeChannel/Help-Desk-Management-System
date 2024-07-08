@@ -4,6 +4,7 @@ using HelpDeskSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HelpDeskSystem.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240707093304_ResolutionStatus")]
+    partial class ResolutionStatus
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -310,12 +313,6 @@ namespace HelpDeskSystem.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime?>("AssignedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("AssignedToId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("Attachment")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -345,8 +342,6 @@ namespace HelpDeskSystem.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AssignedToId");
 
                     b.HasIndex("CreatedById");
 
@@ -708,10 +703,6 @@ namespace HelpDeskSystem.Data.Migrations
 
             modelBuilder.Entity("HelpDeskSystem.Models.Ticket", b =>
                 {
-                    b.HasOne("HelpDeskSystem.Models.ApplicationUser", "AssignedTo")
-                        .WithMany()
-                        .HasForeignKey("AssignedToId");
-
                     b.HasOne("HelpDeskSystem.Models.ApplicationUser", "CreatedBy")
                         .WithMany()
                         .HasForeignKey("CreatedById")
@@ -733,8 +724,6 @@ namespace HelpDeskSystem.Data.Migrations
                     b.HasOne("HelpDeskSystem.Models.TicketSubCategory", "SubCategory")
                         .WithMany()
                         .HasForeignKey("SubCategoryId");
-
-                    b.Navigation("AssignedTo");
 
                     b.Navigation("CreatedBy");
 

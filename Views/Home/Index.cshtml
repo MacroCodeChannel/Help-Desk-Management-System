@@ -92,10 +92,10 @@
                             @Html.DisplayNameFor(model => model.Description)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Status)
+                            @Html.DisplayNameFor(model => model.Priority)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Priority)
+                            @Html.DisplayNameFor(model => model.Status)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.CreatedBy)
@@ -112,6 +112,27 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
+                        var colorcode = "Red";
+                        if (item.Status.Code == "Resolved")
+                        {
+                            colorcode = "Green";
+                        }
+                        else if (item.Status.Code == "Escalated")
+                        {
+                            colorcode = "Yellow";
+                        }
+                        else if (item.Status.Code == "InProgress")
+                        {
+                            colorcode = "Purple";
+                        }
+                        else if (item.Status.Code == "Closed")
+                        {
+                            colorcode = "Green";
+                        }
+                        else if (item.Status.Code == "AwaitingAssigment")
+                        {
+                            colorcode = "Red";
+                        }
                         <tr>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Id)
@@ -123,10 +144,10 @@
                                 @Html.DisplayFor(modelItem => item.Description)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Status.Description)
-                            </td>
-                            <td>
                                 @Html.DisplayFor(modelItem => item.Priority.Description)
+                            </td>
+                            <td style="background-color:@colorcode">
+                                @Html.DisplayFor(modelItem => item.Status.Description)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.CreatedBy.FullName)

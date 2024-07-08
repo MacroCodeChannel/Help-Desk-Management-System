@@ -39,9 +39,7 @@
                         @Html.DisplayNameFor(model => model.StatusId)
                     </th>
                     <th>No of Comments</th>
-                    <th>Comments</th>
-                    <th>View</th>
-                    <th>Edit</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -50,15 +48,19 @@
                     var colorcode = "Red";
                     if (item.Status.Code == "Resolved")
                     {
-                        colorcode = "Greed";
+                        colorcode = "Green";
                     }
-                    else if (item.Status.Code == "InProgress")
+                    else if (item.Status.Code == "Escalated")
                     {
                         colorcode = "Yellow";
                     }
-                    else if (item.Status.Code == "Reassigned")
+                    else if (item.Status.Code == "InProgress")
                     {
                         colorcode = "Purple";
+                    }
+                    else if (item.Status.Code == "Closed")
+                    {
+                        colorcode = "Green";
                     }
                     else if (item.Status.Code == "AwaitingAssigment")
                     {
@@ -90,13 +92,33 @@
                             <a asp-action="TicketsComments" asp-controller="Comments" asp-route-id="@item.Id"> @item.TicketComments.Count()</a>
                         </td>
                         <td>
-                            <a class="btn btn-secondary" asp-action="TicketsComments" asp-controller="Comments" asp-route-id="@item.Id">Comments</a>
-                        </td>
-                        <td>
-                            <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.Id">Details</a>
-                        </td>
-                        <td>
-                            <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                            <div class="ms-auto">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary">Actions</button>
+                                    <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+                                        <span class="visually-hidden">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">
+                                        <a class="dropdown-item" asp-action="TicketsComments" asp-controller="Comments" asp-route-id="@item.Id">Comments</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                                        <div class="dropdown-divider"></div>
+                                        @if (item.Status.Code != "Resolved" && item.Status.Code != "Closed")
+                                        {
+                                            <a class="dropdown-item" asp-action="TicketAssignment" asp-route-id="@item.Id">Assign</a>
+                                           <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" asp-action="Resolve" asp-route-id="@item.Id">Resolve</a>
+                                        }else
+                                        {
+                                            <a class="dropdown-item" asp-action="ReOpen" asp-route-id="@item.Id">Re-Open</a>
+                                            <div class="dropdown-divider"></div>
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 }

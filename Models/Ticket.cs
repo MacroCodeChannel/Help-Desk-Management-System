@@ -41,5 +41,10 @@ namespace HelpDeskSystem.Models
         public string Attachment { get; set; }
 
         public ICollection<Comment> TicketComments { get; set; }
+
+        public string? AssignedToId { get; set; }
+        public ApplicationUser AssignedTo { get; set; }
+
+        public DateTime? AssignedOn { get; set; }
     }
 }

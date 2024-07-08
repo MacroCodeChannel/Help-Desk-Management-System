@@ -27,6 +27,9 @@ namespace HelpDeskSystem.Data
         public DbSet<SystemCodeDetail> SystemCodeDetails { get; set; }
 
         public DbSet<Department> Departments { get; set; }
+
+        public DbSet<TicketResolution> TicketResolutions { get; set; }
+
         
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -34,16 +37,28 @@ namespace HelpDeskSystem.Data
             base.OnModelCreating(builder);
 
             builder.Entity<Comment>()
-                .HasOne(c => c.CreatedBy)
-                .WithMany()
-                .HasForeignKey(c => c.CreatedById)
-                .OnDelete(DeleteBehavior.Restrict);
+            .HasOne(c => c.CreatedBy)
+            .WithMany()
+            .HasForeignKey(c => c.CreatedById)
+            .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<TicketResolution>()
+            .HasOne(c => c.Status)
+            .WithMany()
+            .HasForeignKey(c => c.StatusId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<TicketResolution>()
+           .HasOne(c => c.Ticket)
+           .WithMany()
+           .HasForeignKey(c => c.TicketId)
+           .OnDelete(DeleteBehavior.Restrict);
 
             builder.Entity<Comment>()
-               .HasOne(c => c.Ticket)
-               .WithMany(c=>c.TicketComments)
-               .HasForeignKey(c => c.TicketId)
-               .OnDelete(DeleteBehavior.Restrict);
+            .HasOne(c => c.Ticket)
+            .WithMany(c=>c.TicketComments)
+            .HasForeignKey(c => c.TicketId)
+            .OnDelete(DeleteBehavior.Restrict);
 
             builder.Entity<TicketCategory>()
             .HasOne(c => c.ModifiedBy)
@@ -52,18 +67,18 @@ namespace HelpDeskSystem.Data
             .OnDelete(DeleteBehavior.Restrict);
 
             builder.Entity<TicketCategory>()
-          .HasOne(c => c.CreatedBy)
-          .WithMany()
-          .HasForeignKey(c => c.CreatedById)
-          .OnDelete(DeleteBehavior.Restrict);
+            .HasOne(c => c.CreatedBy)
+            .WithMany()
+            .HasForeignKey(c => c.CreatedById)
+            .OnDelete(DeleteBehavior.Restrict);
 
             builder.Entity<Ticket>()
-                .HasOne(c => c.CreatedBy)
-                .WithMany()
-                .HasForeignKey(c => c.CreatedById)
-                .OnDelete(DeleteBehavior.Restrict);
+            .HasOne(c => c.CreatedBy)
+            .WithMany()
+            .HasForeignKey(c => c.CreatedById)
+            .OnDelete(DeleteBehavior.Restrict);
 
-            builder.Entity<SystemCodeDetail>()
+         builder.Entity<SystemCodeDetail>()
          .HasOne(c => c.SystemCode)
          .WithMany()
          .HasForeignKey(c => c.SystemCodeId)
