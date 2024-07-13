@@ -3,24 +3,48 @@
   "WorkspaceRootPath": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\viewmodels\\ticketviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:viewmodels\\ticketviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\wwwroot\\assets\\css\\highcharts.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:wwwroot\\assets\\css\\highcharts.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\ResolvedTickets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Tickets\\ResolvedTickets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Data\\Migrations\\20240707165657_AssignmentUpdates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Data\\Migrations\\20240707165657_AssignmentUpdates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\views\\tickets\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:views\\tickets\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\controllers\\ticketcategoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:controllers\\ticketcategoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Data\\Migrations\\20240709175346_AttachmentFieldUpdates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Data\\Migrations\\20240709175346_AttachmentFieldUpdates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\controllers\\ticketcategoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:controllers\\ticketcategoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\viewmodels\\ticketviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:viewmodels\\ticketviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\controllers\\datacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:controllers\\datacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\views\\tickets\\ticketassignment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -39,14 +63,6 @@
       "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:views\\tickets\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\views\\tickets\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:views\\tickets\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Data\\Migrations\\20240707163847_Assignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Data\\Migrations\\20240707163847_Assignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -55,20 +71,12 @@
       "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:views\\departments\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\models\\audittrail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:models\\audittrail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\views\\comments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:views\\comments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Data\\Migrations\\20240707093304_ResolutionStatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Data\\Migrations\\20240707093304_ResolutionStatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -139,10 +147,6 @@
       "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:views\\departments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\controllers\\audittrailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:controllers\\audittrailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -185,10 +189,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\controllers\\datacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:controllers\\datacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\views\\tickets\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -423,8 +423,28 @@
       "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:data\\migrations\\20240617142228_departments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Models\\TicketResolution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\TicketResolution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\data\\migrations\\20240707165657_assignmentupdates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:data\\migrations\\20240707165657_assignmentupdates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\data\\migrations\\20240707163847_assignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:data\\migrations\\20240707163847_assignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\models\\ticketresolution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:models\\ticketresolution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|d:\\software projects\\.net core projects\\helpdesksystem\\data\\migrations\\20240707093304_resolutionstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB926E0C-45AB-465D-8ABE-3FD63A47446F}|HelpDeskSystem.csproj|solutionrelative:data\\migrations\\20240707093304_resolutionstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\ClosedTickets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Tickets\\ClosedTickets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\AssignedTickets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Tickets\\AssignedTickets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -442,59 +462,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tickets\\Index.cshtml",
-              "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\Index.cshtml",
-              "RelativeToolTip": "Views\\Tickets\\Index.cshtml",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAAAG0AAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-25T13:02:26.379Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\Details.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tickets\\Details.cshtml",
-              "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\Details.cshtml",
-              "RelativeToolTip": "Views\\Tickets\\Details.cshtml",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAowEgAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-26T07:54:04.228Z",
+              "DocumentIndex": 2,
+              "Title": "highCharts.css",
+              "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\wwwroot\\assets\\css\\highCharts.css",
+              "RelativeDocumentMoniker": "wwwroot\\assets\\css\\highCharts.css",
+              "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\wwwroot\\assets\\css\\highCharts.css",
+              "RelativeToolTip": "wwwroot\\assets\\css\\highCharts.css",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAAgAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-07-13T14:49:57.627Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Departments\\Details.cshtml",
-              "RelativeDocumentMoniker": "Views\\Departments\\Details.cshtml",
-              "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Departments\\Details.cshtml",
-              "RelativeToolTip": "Views\\Departments\\Details.cshtml",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-28T13:47:48.839Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TicketCategoriesController.cs",
-              "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Controllers\\TicketCategoriesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TicketCategoriesController.cs",
-              "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Controllers\\TicketCategoriesController.cs",
-              "RelativeToolTip": "Controllers\\TicketCategoriesController.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAgwDQAAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T17:07:02.861Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "Resolve.cshtml",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\Resolve.cshtml",
               "RelativeDocumentMoniker": "Views\\Tickets\\Resolve.cshtml",
@@ -502,51 +483,182 @@
               "RelativeToolTip": "Views\\Tickets\\Resolve.cshtml",
               "ViewState": "AQIAAEAAAAAAAAAAAAAowFcAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-07T12:14:43.396Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T12:14:43.396Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAIYBAAAAAAAAAAAAAI8BAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-19T12:15:02.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20240709175346_AttachmentFieldUpdates.cs",
+              "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Data\\Migrations\\20240709175346_AttachmentFieldUpdates.cs",
+              "RelativeDocumentMoniker": "Data\\Migrations\\20240709175346_AttachmentFieldUpdates.cs",
+              "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Data\\Migrations\\20240709175346_AttachmentFieldUpdates.cs",
+              "RelativeToolTip": "Data\\Migrations\\20240709175346_AttachmentFieldUpdates.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T17:53:47.295Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "TicketsController.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Controllers\\TicketsController.cs",
               "RelativeDocumentMoniker": "Controllers\\TicketsController.cs",
               "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Controllers\\TicketsController.cs",
               "RelativeToolTip": "Controllers\\TicketsController.cs",
-              "ViewState": "AQIAAJIAAAAAAAAAAAAgwJ8AAABAAAAA",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAuwFMAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T12:56:22.673Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-25T12:56:22.673Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Ticket.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Models\\Ticket.cs",
               "RelativeDocumentMoniker": "Models\\Ticket.cs",
               "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Models\\Ticket.cs",
               "RelativeToolTip": "Models\\Ticket.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAA4wCwAAAAVAAAA",
+              "ViewState": "AQIAACcAAAAAAAAAAAAIwCgAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T12:41:21.304Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-25T12:41:21.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 110,
+              "Title": "AssignedTickets.cshtml",
+              "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\AssignedTickets.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tickets\\AssignedTickets.cshtml",
+              "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\AssignedTickets.cshtml",
+              "RelativeToolTip": "Views\\Tickets\\AssignedTickets.cshtml",
+              "ViewState": "AQIAAGkAAAAAAAAAAAAYwIIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-09T18:07:03.825Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAADoCAAAAAAAAAAAswI8CAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-08T12:39:09.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 109,
+              "Title": "ClosedTickets.cshtml",
+              "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\ClosedTickets.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tickets\\ClosedTickets.cshtml",
+              "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\ClosedTickets.cshtml",
+              "RelativeToolTip": "Views\\Tickets\\ClosedTickets.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-09T18:07:43.717Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ResolvedTickets.cshtml",
+              "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\ResolvedTickets.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tickets\\ResolvedTickets.cshtml",
+              "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\ResolvedTickets.cshtml",
+              "RelativeToolTip": "Views\\Tickets\\ResolvedTickets.cshtml",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAAkAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-09T18:08:16.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TicketCategoriesController.cs",
+              "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Controllers\\TicketCategoriesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TicketCategoriesController.cs",
+              "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Controllers\\TicketCategoriesController.cs",
+              "RelativeToolTip": "Controllers\\TicketCategoriesController.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAgwDQAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T17:07:02.861Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Departments\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Departments\\Details.cshtml",
+              "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Departments\\Details.cshtml",
+              "RelativeToolTip": "Views\\Departments\\Details.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-28T13:47:48.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "TicketViewModel.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\ViewModels\\TicketViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\TicketViewModel.cs",
               "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\ViewModels\\TicketViewModel.cs",
               "RelativeToolTip": "ViewModels\\TicketViewModel.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAYwDwAAAAkAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAIwCwAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T10:25:08.655Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-16T10:25:08.655Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
+              "Title": "DataController.cs",
+              "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Controllers\\DataController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DataController.cs",
+              "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Controllers\\DataController.cs",
+              "RelativeToolTip": "Controllers\\DataController.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAIAwwBwAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T10:32:14.388Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tickets\\Index.cshtml",
+              "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\Index.cshtml",
+              "RelativeToolTip": "Views\\Tickets\\Index.cshtml",
+              "ViewState": "AQIAAGgAAAAAAAAAAAAYwIEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-25T13:02:26.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tickets\\Details.cshtml",
+              "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\Details.cshtml",
+              "RelativeToolTip": "Views\\Tickets\\Details.cshtml",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAowEgAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-26T07:54:04.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 105,
               "Title": "20240707165657_AssignmentUpdates.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Data\\Migrations\\20240707165657_AssignmentUpdates.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20240707165657_AssignmentUpdates.cs",
@@ -554,12 +666,11 @@
               "RelativeToolTip": "Data\\Migrations\\20240707165657_AssignmentUpdates.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAAQwBgAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:56:57.387Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T16:56:57.387Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "ReOpen.cshtml",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\ReOpen.cshtml",
               "RelativeDocumentMoniker": "Views\\Tickets\\ReOpen.cshtml",
@@ -567,12 +678,11 @@
               "RelativeToolTip": "Views\\Tickets\\ReOpen.cshtml",
               "ViewState": "AQIAAEAAAAAAAAAAAAAowFcAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-07T13:04:33.493Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T13:04:33.493Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "TicketAssignment.cshtml",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\TicketAssignment.cshtml",
               "RelativeDocumentMoniker": "Views\\Tickets\\TicketAssignment.cshtml",
@@ -580,12 +690,11 @@
               "RelativeToolTip": "Views\\Tickets\\TicketAssignment.cshtml",
               "ViewState": "AQIAAKYAAAAAAAAAAAAowLAAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-07T16:39:38.381Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T16:39:38.381Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 106,
               "Title": "20240707163847_Assignment.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Data\\Migrations\\20240707163847_Assignment.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20240707163847_Assignment.cs",
@@ -593,12 +702,11 @@
               "RelativeToolTip": "Data\\Migrations\\20240707163847_Assignment.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAAwBYAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T16:38:48.024Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T16:38:48.024Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "AuditTrail.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Models\\AuditTrail.cs",
               "RelativeDocumentMoniker": "Models\\AuditTrail.cs",
@@ -606,12 +714,11 @@
               "RelativeToolTip": "Models\\AuditTrail.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAuwAsAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-02T16:10:30.949Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-02T16:10:30.949Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Comments\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Comments\\Create.cshtml",
@@ -623,7 +730,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -635,7 +742,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
@@ -647,7 +754,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -655,12 +762,11 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAgwA0AAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T12:13:36.268Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-19T12:13:36.268Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 107,
               "Title": "TicketResolution.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Models\\TicketResolution.cs",
               "RelativeDocumentMoniker": "Models\\TicketResolution.cs",
@@ -672,7 +778,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "20240707092853_ResolutionStatus.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Data\\Migrations\\20240707092853_ResolutionStatus.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20240707092853_ResolutionStatus.cs",
@@ -684,20 +790,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAIoAAAAAAAAAAAAwwJkAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-08T12:39:09.338Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "20240707093150_ResolutionStatus.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Data\\Migrations\\20240707093150_ResolutionStatus.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20240707093150_ResolutionStatus.cs",
@@ -709,7 +802,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 108,
               "Title": "20240707093304_ResolutionStatus.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Data\\Migrations\\20240707093304_ResolutionStatus.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20240707093304_ResolutionStatus.cs",
@@ -721,7 +814,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Tickets\\Create.cshtml",
@@ -733,7 +826,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Tickets\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\Tickets\\Edit.cshtml",
@@ -745,7 +838,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "CommentsController.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Controllers\\CommentsController.cs",
               "RelativeDocumentMoniker": "Controllers\\CommentsController.cs",
@@ -757,7 +850,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "Comment.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Models\\Comment.cs",
               "RelativeDocumentMoniker": "Models\\Comment.cs",
@@ -769,7 +862,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Comments\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\Comments\\Details.cshtml",
@@ -781,7 +874,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "SystemCodesController.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Controllers\\SystemCodesController.cs",
               "RelativeDocumentMoniker": "Controllers\\SystemCodesController.cs",
@@ -793,7 +886,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Comments\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Comments\\Index.cshtml",
@@ -805,7 +898,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Users\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Users\\Index.cshtml",
@@ -817,7 +910,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\TicketCategories\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\TicketCategories\\Create.cshtml",
@@ -829,7 +922,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Departments\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Departments\\Index.cshtml",
@@ -841,7 +934,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "UserActivity.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Models\\UserActivity.cs",
               "RelativeDocumentMoniker": "Models\\UserActivity.cs",
@@ -853,7 +946,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "DepartmentsController.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Controllers\\DepartmentsController.cs",
               "RelativeDocumentMoniker": "Controllers\\DepartmentsController.cs",
@@ -865,19 +958,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAACcBAAAAAAAAAAAYwDgBAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-19T12:15:02.636Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -889,7 +970,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "Department.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Models\\Department.cs",
               "RelativeDocumentMoniker": "Models\\Department.cs",
@@ -901,7 +982,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Departments\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Departments\\Create.cshtml",
@@ -913,7 +994,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "20240617142125_Departments.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Data\\Migrations\\20240617142125_Departments.cs",
               "RelativeDocumentMoniker": "Data\\Migrations\\20240617142125_Departments.cs",
@@ -937,7 +1018,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "AuditTrailsController.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Controllers\\AuditTrailsController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuditTrailsController.cs",
@@ -949,7 +1030,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "RolesController.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Controllers\\RolesController.cs",
               "RelativeDocumentMoniker": "Controllers\\RolesController.cs",
@@ -961,7 +1042,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Roles\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Roles\\Create.cshtml",
@@ -973,7 +1054,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\SystemCodes\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\SystemCodes\\Create.cshtml",
@@ -985,7 +1066,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\Roles\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Roles\\Index.cshtml",
@@ -997,7 +1078,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "RolesViewModel.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\ViewModels\\RolesViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\RolesViewModel.cs",
@@ -1009,7 +1090,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "UsersController.cs",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
@@ -1018,18 +1099,6 @@
               "ViewState": "AQIAAAkAAAAAAAAAAAAAAAwAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-02T13:25:31.259Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "DataController.cs",
-              "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Controllers\\DataController.cs",
-              "RelativeDocumentMoniker": "Controllers\\DataController.cs",
-              "ToolTip": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Controllers\\DataController.cs",
-              "RelativeToolTip": "Controllers\\DataController.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAIAwwCQAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T10:32:14.388Z"
             },
             {
               "$type": "Document",
@@ -1045,7 +1114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\Views\\TicketCategories\\Delete.cshtml",
               "RelativeDocumentMoniker": "Views\\TicketCategories\\Delete.cshtml",

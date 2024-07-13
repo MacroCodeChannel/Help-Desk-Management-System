@@ -49,6 +49,10 @@
       "PackagePath": "staticwebassets\\assets\\css\\header-colors.css"
     },
     {
+      "Id": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\wwwroot\\assets\\css\\highCharts.css",
+      "PackagePath": "staticwebassets\\assets\\css\\highCharts.css"
+    },
+    {
       "Id": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\wwwroot\\assets\\css\\icons.css",
       "PackagePath": "staticwebassets\\assets\\css\\icons.css"
     },

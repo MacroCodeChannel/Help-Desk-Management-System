@@ -39,6 +39,69 @@ namespace HelpDeskSystem.Controllers
             return View(vm);
         }
 
+        public async Task<IActionResult> AssignedTickets(TicketViewModel vm)
+        {
+            var assignedStatus = await _context
+            .SystemCodeDetails
+            .Include(x => x.SystemCode)
+            .Where(x => x.SystemCode.Code == "ResolutionStatus" && x.Code == "Assigned")
+            .FirstOrDefaultAsync();
+
+            vm.Tickets = await _context.Tickets
+                .Include(t => t.CreatedBy)
+                .Include(t => t.SubCategory)
+                .Include(t => t.Priority)
+                .Include(t => t.Status)
+                .Include(t => t.TicketComments)
+                .OrderBy(x => x.CreatedOn)
+                .Where(x=>x.StatusId== assignedStatus.Id)
+                .ToListAsync();
+
+            return View(vm);
+        }
+
+        public async Task<IActionResult> ClosedTickets(TicketViewModel vm)
+        {
+            var closedStatus = await _context
+            .SystemCodeDetails
+            .Include(x => x.SystemCode)
+            .Where(x => x.SystemCode.Code == "ResolutionStatus" && x.Code == "Closed")
+            .FirstOrDefaultAsync();
+
+            vm.Tickets = await _context.Tickets
+                .Include(t => t.CreatedBy)
+                .Include(t => t.SubCategory)
+                .Include(t => t.Priority)
+                .Include(t => t.Status)
+                .Include(t => t.TicketComments)
+                .OrderBy(x => x.CreatedOn)
+                .Where(x => x.StatusId == closedStatus.Id)
+                .ToListAsync();
+
+            return View(vm);
+        }
+
+        public async Task<IActionResult> ResolvedTickets(TicketViewModel vm)
+        {
+            var resolvedStatus = await _context
+            .SystemCodeDetails
+            .Include(x => x.SystemCode)
+            .Where(x => x.SystemCode.Code == "ResolutionStatus" && x.Code == "Resolved")
+            .FirstOrDefaultAsync();
+
+            vm.Tickets = await _context.Tickets
+                .Include(t => t.CreatedBy)
+                .Include(t => t.SubCategory)
+                .Include(t => t.Priority)
+                .Include(t => t.Status)
+                .Include(t => t.TicketComments)
+                .OrderBy(x => x.CreatedOn)
+                .Where(x => x.StatusId == resolvedStatus.Id)
+                .ToListAsync();
+
+            return View(vm);
+        }
+
         // GET: Tickets/Details/5
         public async Task<IActionResult> Details(int? id, TicketViewModel vm)
         {
@@ -214,7 +277,7 @@ namespace HelpDeskSystem.Controllers
         public async Task<IActionResult> Create(TicketViewModel ticketvm, IFormFile attachment)
         {
 
-            if(attachment.Length > 0)
+            if(attachment !=null  && attachment.Length > 0)
             {
                  var filename = "Ticket_Attachment"+ DateTime.Now.ToString("yyyymmddhhmmss")+"_"+ attachment.FileName;
                 var path = _configuration["FileSettings:UploadsFolder"]!;

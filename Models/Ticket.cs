@@ -38,7 +38,7 @@ namespace HelpDeskSystem.Models
 
 
         [DisplayName("Document Attachment")]
-        public string Attachment { get; set; }
+        public string? Attachment { get; set; }
 
         public ICollection<Comment> TicketComments { get; set; }
 

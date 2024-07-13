@@ -1,0 +1,130 @@
+﻿@model HelpDeskSystem.ViewModels.TicketViewModel
+
+@{
+    ViewData["Title"] = "Assigned Tickets";
+}
+
+<div class="card rounded-4">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <h6 class="mb-0">Assigned Tickets</h6>
+        </div>
+        <p>
+            <a asp-action="Create" class="btn btn-primary"> Add New Ticket</a>
+        </p>
+        <table class="table table-bordered table-responsive table-hover table-responsive-lg">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.PriorityId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SubCategoryId)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedBy)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedOn)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StatusId)
+                    </th>
+                    <th>No of Comments</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Tickets)
+                {
+                    var colorcode = "Red";
+                    if (item.Status.Code == "Resolved")
+                    {
+                        colorcode = "Green";
+                    }
+                    else if (item.Status.Code == "Escalated")
+                    {
+                        colorcode = "Yellow";
+                    }
+                    else if (item.Status.Code == "InProgress")
+                    {
+                        colorcode = "Purple";
+                    }
+                    else if (item.Status.Code == "Closed")
+                    {
+                        colorcode = "Green";
+                    }
+                    else if (item.Status.Code == "AwaitingAssigment")
+                    {
+                        colorcode = "Red";
+                    }
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Priority.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SubCategory.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedBy.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedOn)
+                        </td>
+                        <td style="background-color:@colorcode">
+                            @Html.DisplayFor(modelItem => item.Status.Description)
+                        </td>
+                        <td style="text-align:center">
+                            <a asp-action="TicketsComments" asp-controller="Comments" asp-route-id="@item.Id"> @item.TicketComments.Count()</a>
+                        </td>
+                        <td>
+                            <div class="ms-auto">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary">Actions</button>
+                                    <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+                                        <span class="visually-hidden">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">
+                                        <a class="dropdown-item" asp-action="TicketsComments" asp-controller="Comments" asp-route-id="@item.Id">Comments</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                                        <div class="dropdown-divider"></div>
+                                        @if (item.Status.Code != "Resolved" && item.Status.Code != "Closed")
+                                        {
+                                            <a class="dropdown-item" asp-action="TicketAssignment" asp-route-id="@item.Id">Assign</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" asp-action="Resolve" asp-route-id="@item.Id">Resolve</a>
+                                        }
+                                        else
+                                        {
+                                            <a class="dropdown-item" asp-action="ReOpen" asp-route-id="@item.Id">Re-Open</a>
+                                            <div class="dropdown-divider"></div>
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

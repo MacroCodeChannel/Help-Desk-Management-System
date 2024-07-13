@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zRU39M/jWTfvbGsMw7SkarqD6pxNgyERvxgObhZ4zVY=",
+  "Hash": "vx/SPnuSmcy329Gn5Fd8bv6CJkpyzPjyxMjhySf+m5c=",
   "Source": "HelpDeskSystem",
   "BasePath": "_content/HelpDeskSystem",
   "Mode": "Default",
@@ -1383,6 +1383,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\css\\header-colors.css"
+    },
+    {
+      "Identity": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\wwwroot\\assets\\css\\highCharts.css",
+      "SourceId": "HelpDeskSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\wwwroot\\",
+      "BasePath": "_content/HelpDeskSystem",
+      "RelativePath": "assets/css/highCharts.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\highCharts.css"
     },
     {
       "Identity": "D:\\Software Projects\\.NET Core Projects\\HelpDeskSystem\\wwwroot\\assets\\css\\icons.css",
