@@ -24,6 +24,8 @@ namespace HelpDeskSystem.Controllers
         // GET: TicketSubCategories
         public async Task<IActionResult> Index(int id,TicketSubCategoriesVM vm)
         {
+            
+
             vm.TicketSubCategories = await _context.TicketSubCategories
                 .Include(t => t.Category)
                 .Include(t => t.CreatedBy)
@@ -90,22 +92,9 @@ namespace HelpDeskSystem.Controllers
 
             ticketSubCategory.Id = 0;
             ticketSubCategory.CategoryId = id;
-            _context.Add(ticketSubCategory);
-                await _context.SaveChangesAsync();
+             _context.Add(ticketSubCategory);
+             await _context.SaveChangesAsync(loggedIUser);
 
-            //Log the Audit Trail
-            var activity = new AuditTrail
-            {
-                Action = "Create",
-                TimeStamp = DateTime.Now,
-                IpAddress = HttpContext.Connection.RemoteIpAddress?.ToString(),
-                UserId = loggedIUser,
-                Module = "Ticket Sub-Catagories",
-                AffectedTable = "TicketSubCategories"
-            };
-
-            _context.Add(activity);
-            await _context.SaveChangesAsync();
 
             TempData["MESSAGE"] = "Ticket Sub-Category Details successfully Created";
 

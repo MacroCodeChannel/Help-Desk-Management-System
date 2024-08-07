@@ -5,6 +5,60 @@
 }
 
 <div class="card rounded-4">
+    <form asp-action="Index" method="post" enctype="multipart/form-data">
+        <div class="col-md-12">
+            <div class="row p-3">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="CreatedById" class="control-label"></label>
+                        <select asp-for="CreatedById" name="CreatedById" class="form-control single-select" asp-items="ViewBag.CreatedById">
+                            <option value=" ">Select User</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="TicketCategoryId" class="control-label"></label>
+                        <select asp-for="TicketCategoryId" name="TicketCategoryId" class="form-control single-select" asp-items="ViewBag.CategoryId">
+                            <option value=" ">Select Category</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="StatusId" class="control-label"></label>
+                        <select asp-for="StatusId" name="StatusId" class="form-control single-select" asp-items="ViewBag.StatusId">
+                            <option value=" ">Select Status</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="PriorityId" class="control-label"></label>
+                        <select asp-for="PriorityId" name="PriorityId" class="form-control single-select" asp-items="ViewBag.PriorityId">
+                            <option value=" ">Select Priority</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row p-3">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="card rounded-4">
     <div class="card-body">
         <div class="d-flex align-items-center">
             <h6 class="mb-0">Recent Tickets</h6>
@@ -12,118 +66,138 @@
         <p>
             <a asp-action="Create" class="btn btn-primary"> Add New Ticket</a>
         </p>
-        <table class="table table-bordered table-responsive table-hover table-responsive-lg">
-            <thead>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Id)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Title)
-                    </th>
-                   
-                    <th>
-                        @Html.DisplayNameFor(model => model.PriorityId)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.SubCategoryId)
-                    </th>
-                    
-                    <th>
-                        @Html.DisplayNameFor(model => model.CreatedBy)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.CreatedOn)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.StatusId)
-                    </th>
-                    <th>No of Comments</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Tickets)
-                {
-                    var colorcode = "Red";
-                    if (item.Status.Code == "Resolved")
-                    {
-                        colorcode = "Green";
-                    }
-                    else if (item.Status.Code == "Escalated")
-                    {
-                        colorcode = "Yellow";
-                    }
-                    else if (item.Status.Code == "InProgress")
-                    {
-                        colorcode = "Purple";
-                    }
-                    else if (item.Status.Code == "Closed")
-                    {
-                        colorcode = "Green";
-                    }
-                    else if (item.Status.Code == "AwaitingAssigment")
-                    {
-                        colorcode = "Red";
-                    }
+        <div class="table-responsive">
+            <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <thead>
                     <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Id)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Title)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Priority.Description)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.SubCategory.Name)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.CreatedBy.FullName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.CreatedOn)
-                        </td>
-                        <td style="background-color:@colorcode">
-                            @Html.DisplayFor(modelItem => item.Status.Description)
-                        </td>
-                        <td style="text-align:center">
-                            <a asp-action="TicketsComments" asp-controller="Comments" asp-route-id="@item.Id"> @item.TicketComments.Count()</a>
-                        </td>
-                        <td>
-                            <div class="ms-auto">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-primary">Actions</button>
-                                    <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
-                                        <span class="visually-hidden">Toggle Dropdown</span>
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">
-                                        <a class="dropdown-item" asp-action="TicketsComments" asp-controller="Comments" asp-route-id="@item.Id">Comments</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" asp-action="Details" asp-route-id="@item.Id">Details</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                                        <div class="dropdown-divider"></div>
-                                        @if (item.Status.Code != "Resolved" && item.Status.Code != "Closed")
-                                        {
-                                            <a class="dropdown-item" asp-action="TicketAssignment" asp-route-id="@item.Id">Assign</a>
-                                           <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" asp-action="Resolve" asp-route-id="@item.Id">Resolve</a>
-                                        }else
-                                        {
-                                            <a class="dropdown-item" asp-action="ReOpen" asp-route-id="@item.Id">Re-Open</a>
-                                            <div class="dropdown-divider"></div>
-                                        }
+                        <th>
+                            @Html.DisplayNameFor(model => model.Id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </th>
 
+                        <th>
+                            @Html.DisplayNameFor(model => model.PriorityId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SubCategoryId)
+                        </th>
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.CreatedBy)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CreatedOn)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.StatusId)
+                        </th>
+                        <th>No of Comments</th>
+                        <th>Duration</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Tickets)
+                    {
+                        var colorcode = "Red";
+                        if (item.Status.Code == "Resolved")
+                        {
+                            colorcode = "Green";
+                        }
+                        else if (item.Status.Code == "Escalated")
+                        {
+                            colorcode = "Yellow";
+                        }
+                        else if (item.Status.Code == "InProgress")
+                        {
+                            colorcode = "Purple";
+                        }
+                        else if (item.Status.Code == "Closed")
+                        {
+                            colorcode = "Green";
+                        }
+                        else if (item.Status.Code == "AwaitingAssigment")
+                        {
+                            colorcode = "Red";
+                        }
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Priority.Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SubCategory.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreatedBy.FullName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreatedOn)
+                            </td>
+                           
+                            <td style="background-color:@colorcode">
+                                @Html.DisplayFor(modelItem => item.Status.Description)
+                            </td>
+                            <td style="text-align:center">
+                                <a asp-action="TicketsComments" asp-controller="Comments" asp-route-id="@item.Id"> @item.TicketComments.Count()</a>
+                            </td>
+                            @if(Convert.ToInt32(@Model.MainDuration.Value) > item.TicketDuration)
+                            {
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TicketDuration)
+                                    - Days
+                                </td>
+                            }
+                            else
+                            {
+                            <td  style="background-color:red">
+                                @Html.DisplayFor(modelItem => item.TicketDuration)
+                                    - Days
+                            </td>
+                            }
+
+                            
+                            <td>
+                                <div class="ms-auto">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary">Actions</button>
+                                        <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+                                            <span class="visually-hidden">Toggle Dropdown</span>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">
+                                            <a class="dropdown-item" asp-action="TicketsComments" asp-controller="Comments" asp-route-id="@item.Id">Comments</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                                            <div class="dropdown-divider"></div>
+                                            @if (item.Status.Code != "Resolved" && item.Status.Code != "Closed")
+                                            {
+                                                <a class="dropdown-item" asp-action="TicketAssignment" asp-route-id="@item.Id">Assign</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" asp-action="Resolve" asp-route-id="@item.Id">Resolve</a>
+                                            }
+                                            else
+                                            {
+                                                <a class="dropdown-item" asp-action="ReOpen" asp-route-id="@item.Id">Re-Open</a>
+                                                <div class="dropdown-divider"></div>
+                                            }
+
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
-

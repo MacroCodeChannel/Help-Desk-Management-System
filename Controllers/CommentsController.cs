@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using HelpDeskSystem.Data;
 using HelpDeskSystem.Models;
 using System.Security.Claims;
+using HelpDeskSystem.ViewModels;
 
 namespace HelpDeskSystem.Controllers
 {
@@ -21,10 +22,30 @@ namespace HelpDeskSystem.Controllers
         }
 
         // GET: Comments
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(CommentViewModel vm)
         {
-            var applicationDbContext = _context.Comments.Include(c => c.CreatedBy).Include(c => c.Ticket);
-            return View(await applicationDbContext.ToListAsync());
+
+            var allcomments = _context.Comments
+                 .Include(c => c.CreatedBy)
+                 .Include(c => c.Ticket)
+                 .AsQueryable();
+            if (vm != null)
+            {
+                if (!string.IsNullOrEmpty(vm.Description))
+                {
+                    allcomments = allcomments.Where(x => x.Description.Contains(vm.Description));
+                }
+                if (!string.IsNullOrEmpty(vm.CreatedById))
+                {
+                    allcomments = allcomments.Where(x => x.CreatedById == vm.CreatedById);
+                }
+            }
+
+            vm.Comments = await allcomments.ToListAsync();
+
+            ViewData["CreatedById"] = new SelectList(_context.Users, "Id", "FullName");
+
+            return View(vm);
         }
 
         public async Task<IActionResult> TicketsComments(int Id)
@@ -79,21 +100,7 @@ namespace HelpDeskSystem.Controllers
             comment.CreatedOn = DateTime.Now;
             comment.CreatedById = userId;
             _context.Add(comment);
-                await _context.SaveChangesAsync();
-
-            //Log the Audit Trail
-            var activity = new AuditTrail
-            {
-                Action = "Create",
-                TimeStamp = DateTime.Now,
-                IpAddress = HttpContext.Connection.RemoteIpAddress?.ToString(),
-                UserId = userId,
-                Module = "Comments",
-                AffectedTable = "Comments"
-            };
-
-            _context.Add(activity);
-            await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync(userId);
 
             TempData["MESSAGE"] = "Comments Details successfully Created";
 

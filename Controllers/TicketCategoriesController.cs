@@ -65,9 +65,8 @@ namespace HelpDeskSystem.Controllers
 
             ticketCategory.CreatedOn = DateTime.Now;
             ticketCategory.CreatedById = userId;
-
             _context.Add(ticketCategory);
-                await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(userId);
 
             TempData["MESSAGE"] = "Ticket Category Details successfully Created";
             return RedirectToAction(nameof(Index));

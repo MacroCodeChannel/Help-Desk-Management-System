@@ -3,50 +3,99 @@
 @{
     ViewData["Title"] = "Details";
 }
-
-<h1>Details</h1>
-
-<div>
-    <h4>AuditTrail</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Action)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Action)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Module)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Module)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AffectedTable)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AffectedTable)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TimeStamp)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TimeStamp)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IpAddress)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IpAddress)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.User)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.User.Id)
-        </dd>
-    </dl>
+<div class="card rounded-4">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <h6 class="mb-0">System Audit Trails </h6>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table table-bordered table-responsive table-hover table-responsive-lg">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Id)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.Id)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Action)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.Action)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Module)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.Module)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AffectedTable)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.AffectedTable)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TimeStamp)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.TimeStamp)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.UserId)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.User.FullName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.OldValues)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.OldValues)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NewValues)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.NewValues)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AffectedColumns)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.AffectedColumns)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PrimaryKey)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.PrimaryKey)
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |

@@ -9,7 +9,9 @@ using HelpDeskSystem.Data;
 using HelpDeskSystem.Models;
 using System.Security.Claims;
 using HelpDeskSystem.ViewModels;
-using System.Runtime.Intrinsics.X86;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace HelpDeskSystem.Controllers
 {
@@ -27,14 +29,60 @@ namespace HelpDeskSystem.Controllers
         // GET:Tickets
         public async Task<IActionResult> Index(TicketViewModel vm)
         {
-            vm.Tickets =  await _context.Tickets
+           
+            var  alltickets = _context.Tickets
                 .Include(t => t.CreatedBy)
                 .Include(t=> t.SubCategory)
                 .Include(t => t.Priority)
                 .Include(t => t.Status)
                 .Include(t=>t.TicketComments)
                 .OrderBy(x=>x.CreatedOn)
-                .ToListAsync();
+                .AsQueryable();
+
+            if (vm != null)
+            {
+                if (!string.IsNullOrEmpty(vm.Title))
+                {
+                    alltickets = alltickets.Where(x => x.Title == vm.Title);
+                }
+
+                if (!string.IsNullOrEmpty(vm.CreatedById))
+                {
+                    alltickets = alltickets.Where(x => x.CreatedById == vm.CreatedById);
+                }
+
+                if (vm.StatusId > 0)
+                {
+                    alltickets = alltickets.Where(x => x.StatusId == vm.StatusId);
+                }
+
+                if (vm.PriorityId > 0)
+                {
+                    alltickets = alltickets.Where(x => x.PriorityId == vm.PriorityId);
+                }
+
+                if (vm.CategoryId > 0)
+                {
+                    alltickets = alltickets.Where(x => x.SubCategory.CategoryId == vm.CategoryId);
+                }
+            }
+
+            vm.Tickets = await alltickets.ToListAsync();
+
+            vm.MainDuration = await _context.SystemSettings
+                .Where(x => x.Code == "TICKETRESOLUTIONDAYS").FirstOrDefaultAsync();
+
+
+
+
+            ViewData["PriorityId"] = new SelectList(_context.SystemCodeDetails
+                .Include(x => x.SystemCode)
+                .Where(x => x.SystemCode.Code == "Priority"), "Id", "Description");
+            ViewData["CategoryId"] = new SelectList(_context.TicketCategories, "Id", "Name");
+            ViewData["CreatedById"] = new SelectList(_context.Users, "Id", "FullName");
+            ViewData["StatusId"] = new SelectList(_context.SystemCodeDetails
+                .Include(x=>x.SystemCode)
+                .Where(x => x.SystemCode.Code == "ResolutionStatus"), "Id", "Description");
 
             return View(vm);
         }
@@ -47,16 +95,55 @@ namespace HelpDeskSystem.Controllers
             .Where(x => x.SystemCode.Code == "ResolutionStatus" && x.Code == "Assigned")
             .FirstOrDefaultAsync();
 
-            vm.Tickets = await _context.Tickets
+            var alltickets = _context.Tickets
                 .Include(t => t.CreatedBy)
                 .Include(t => t.SubCategory)
                 .Include(t => t.Priority)
                 .Include(t => t.Status)
                 .Include(t => t.TicketComments)
-                .OrderBy(x => x.CreatedOn)
                 .Where(x=>x.StatusId== assignedStatus.Id)
-                .ToListAsync();
+                .OrderBy(x => x.CreatedOn)
+                .AsQueryable();
 
+            if (vm != null)
+            {
+                if (!string.IsNullOrEmpty(vm.Title))
+                {
+                    alltickets = alltickets.Where(x => x.Title == vm.Title);
+                }
+
+                if (!string.IsNullOrEmpty(vm.CreatedById))
+                {
+                    alltickets = alltickets.Where(x => x.CreatedById == vm.CreatedById);
+                }
+
+                if (vm.StatusId > 0)
+                {
+                    alltickets = alltickets.Where(x => x.StatusId == vm.StatusId);
+                }
+
+                if (vm.PriorityId > 0)
+                {
+                    alltickets = alltickets.Where(x => x.PriorityId == vm.PriorityId);
+                }
+
+                if (vm.CategoryId > 0)
+                {
+                    alltickets = alltickets.Where(x => x.SubCategory.CategoryId == vm.CategoryId);
+                }
+            }
+
+            vm.Tickets = await alltickets.ToListAsync();
+
+
+            ViewData["PriorityId"] = new SelectList(_context.SystemCodeDetails
+                .Include(x => x.SystemCode)
+                .Where(x => x.SystemCode.Code == "Priority"), "Id", "Description");
+            ViewData["CategoryId"] = new SelectList(_context.TicketCategories, "Id", "Name");
+            ViewData["CreatedById"] = new SelectList(_context.Users, "Id", "FullName");
+            ViewData["StatusId"] = new SelectList(_context.SystemCodeDetails
+                .Include(x => x.SystemCode)
+                .Where(x => x.SystemCode.Code == "ResolutionStatus"), "Id", "Description");
             return View(vm);
         }
 
@@ -68,16 +155,55 @@ namespace HelpDeskSystem.Controllers
             .Where(x => x.SystemCode.Code == "ResolutionStatus" && x.Code == "Closed")
             .FirstOrDefaultAsync();
 
-            vm.Tickets = await _context.Tickets
-                .Include(t => t.CreatedBy)
-                .Include(t => t.SubCategory)
-                .Include(t => t.Priority)
-                .Include(t => t.Status)
-                .Include(t => t.TicketComments)
-                .OrderBy(x => x.CreatedOn)
-                .Where(x => x.StatusId == closedStatus.Id)
-                .ToListAsync();
+            var alltickets = _context.Tickets
+               .Include(t => t.CreatedBy)
+               .Include(t => t.SubCategory)
+               .Include(t => t.Priority)
+               .Include(t => t.Status)
+               .Include(t => t.TicketComments)
+               .Where(x => x.StatusId == closedStatus.Id)
+               .OrderBy(x => x.CreatedOn)
+               .AsQueryable();
 
+            if (vm != null)
+            {
+                if (!string.IsNullOrEmpty(vm.Title))
+                {
+                    alltickets = alltickets.Where(x => x.Title == vm.Title);
+                }
+
+                if (!string.IsNullOrEmpty(vm.CreatedById))
+                {
+                    alltickets = alltickets.Where(x => x.CreatedById == vm.CreatedById);
+                }
+
+                if (vm.StatusId > 0)
+                {
+                    alltickets = alltickets.Where(x => x.StatusId == vm.StatusId);
+                }
+
+                if (vm.PriorityId > 0)
+                {
+                    alltickets = alltickets.Where(x => x.PriorityId == vm.PriorityId);
+                }
+
+                if (vm.CategoryId > 0)
+                {
+                    alltickets = alltickets.Where(x => x.SubCategory.CategoryId == vm.CategoryId);
+                }
+            }
+
+            vm.Tickets = await alltickets.ToListAsync();
+
+
+            ViewData["PriorityId"] = new SelectList(_context.SystemCodeDetails
+                .Include(x => x.SystemCode)
+                .Where(x => x.SystemCode.Code == "Priority"), "Id", "Description");
+            ViewData["CategoryId"] = new SelectList(_context.TicketCategories, "Id", "Name");
+            ViewData["CreatedById"] = new SelectList(_context.Users, "Id", "FullName");
+            ViewData["StatusId"] = new SelectList(_context.SystemCodeDetails
+                .Include(x => x.SystemCode)
+                .Where(x => x.SystemCode.Code == "ResolutionStatus"), "Id", "Description");
             return View(vm);
         }
 
@@ -89,16 +215,55 @@ namespace HelpDeskSystem.Controllers
             .Where(x => x.SystemCode.Code == "ResolutionStatus" && x.Code == "Resolved")
             .FirstOrDefaultAsync();
 
-            vm.Tickets = await _context.Tickets
+            var alltickets = _context.Tickets
                 .Include(t => t.CreatedBy)
                 .Include(t => t.SubCategory)
                 .Include(t => t.Priority)
                 .Include(t => t.Status)
                 .Include(t => t.TicketComments)
-                .OrderBy(x => x.CreatedOn)
                 .Where(x => x.StatusId == resolvedStatus.Id)
-                .ToListAsync();
+                .OrderBy(x => x.CreatedOn)
+                .AsQueryable();
 
+            if (vm != null)
+            {
+                if (!string.IsNullOrEmpty(vm.Title))
+                {
+                    alltickets = alltickets.Where(x => x.Title == vm.Title);
+                }
+
+                if (!string.IsNullOrEmpty(vm.CreatedById))
+                {
+                    alltickets = alltickets.Where(x => x.CreatedById == vm.CreatedById);
+                }
+
+                if (vm.StatusId > 0)
+                {
+                    alltickets = alltickets.Where(x => x.StatusId == vm.StatusId);
+                }
+
+                if (vm.PriorityId > 0)
+                {
+                    alltickets = alltickets.Where(x => x.PriorityId == vm.PriorityId);
+                }
+
+                if (vm.CategoryId > 0)
+                {
+                    alltickets = alltickets.Where(x => x.SubCategory.CategoryId == vm.CategoryId);
+                }
+            }
+
+            vm.Tickets = await alltickets.ToListAsync();
+
+
+            ViewData["PriorityId"] = new SelectList(_context.SystemCodeDetails
+                .Include(x => x.SystemCode)
+                .Where(x => x.SystemCode.Code == "Priority"), "Id", "Description");
+            ViewData["CategoryId"] = new SelectList(_context.TicketCategories, "Id", "Name");
+            ViewData["CreatedById"] = new SelectList(_context.Users, "Id", "FullName");
+            ViewData["StatusId"] = new SelectList(_context.SystemCodeDetails
+                .Include(x => x.SystemCode)
+                .Where(x => x.SystemCode.Code == "ResolutionStatus"), "Id", "Description");
             return View(vm);
         }
 
@@ -307,22 +472,8 @@ namespace HelpDeskSystem.Controllers
             ticket.CreatedOn = DateTime.Now;
             ticket.CreatedById = userId;
             _context.Add(ticket);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(userId);
 
-
-            //Log the Audit Trail
-            var activity = new AuditTrail
-            {
-                Action = "Create",
-                TimeStamp = DateTime.Now,
-                IpAddress = HttpContext.Connection.RemoteIpAddress?.ToString(),
-                UserId = userId,
-                Module = "Tickets",
-                AffectedTable = "Tickets"
-            };
-
-            _context.Add(activity);
-            await _context.SaveChangesAsync();
 
             TempData["MESSAGE"] = "Ticket Details successfully Created";
 
@@ -348,21 +499,8 @@ namespace HelpDeskSystem.Controllers
             newcomment.CreatedById = userId;
             newcomment.Description = vm.CommentDescription;
             _context.Add(newcomment);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(userId);
 
-            //Log the Audit Trail
-            var activity = new AuditTrail
-            {
-                Action = "Create",
-                TimeStamp = DateTime.Now,
-                IpAddress = HttpContext.Connection.RemoteIpAddress?.ToString(),
-                UserId = userId,
-                Module = "Comments",
-                AffectedTable = "Comments"
-            };
-
-            _context.Add(activity);
-            await _context.SaveChangesAsync();
 
             TempData["MESSAGE"] = "Comments Details successfully Created";
 
@@ -397,21 +535,9 @@ namespace HelpDeskSystem.Controllers
             ticket.AssignedOn = DateTime.Now;
             _context.Update(ticket);
 
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(userId);
 
-            //Log the Audit Trail
-            var activity = new AuditTrail
-            {
-                Action = "Re-Open",
-                TimeStamp = DateTime.Now,
-                IpAddress = HttpContext.Connection.RemoteIpAddress?.ToString(),
-                UserId = userId,
-                Module = "TicketResolutions",
-                AffectedTable = "TicketResolutions"
-            };
-
-            _context.Add(activity);
-            await _context.SaveChangesAsync();
+           
 
             TempData["MESSAGE"] = "Ticket Re-Opened successfully";
 
@@ -446,21 +572,9 @@ namespace HelpDeskSystem.Controllers
             ticket.StatusId = closedstatus.Id;
             _context.Update(ticket);
 
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(userId);
 
-            //Log the Audit Trail
-            var activity = new AuditTrail
-            {
-                Action = "Re-Open",
-                TimeStamp = DateTime.Now,
-                IpAddress = HttpContext.Connection.RemoteIpAddress?.ToString(),
-                UserId = userId,
-                Module = "TicketResolutions",
-                AffectedTable = "TicketResolutions"
-            };
-
-            _context.Add(activity);
-            await _context.SaveChangesAsync();
+           
 
             TempData["MESSAGE"] = "Ticket Re-Opened successfully";
 
@@ -494,21 +608,9 @@ namespace HelpDeskSystem.Controllers
             ticket.StatusId = closedstatus.Id;
             _context.Update(ticket);
 
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(userId);
 
-            //Log the Audit Trail
-            var activity = new AuditTrail
-            {
-                Action = "Closed",
-                TimeStamp = DateTime.Now,
-                IpAddress = HttpContext.Connection.RemoteIpAddress?.ToString(),
-                UserId = userId,
-                Module = "TicketResolutions",
-                AffectedTable = "TicketResolutions"
-            };
-
-            _context.Add(activity);
-            await _context.SaveChangesAsync();
+            
 
             TempData["MESSAGE"] = "Ticket Closed successfully";
 
@@ -535,21 +637,9 @@ namespace HelpDeskSystem.Controllers
             ticket.StatusId = vm.StatusId;
             _context.Update(ticket);
 
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(userId);
 
-            //Log the Audit Trail
-            var activity = new AuditTrail
-            {
-                Action = "Create",
-                TimeStamp = DateTime.Now,
-                IpAddress = HttpContext.Connection.RemoteIpAddress?.ToString(),
-                UserId = userId,
-                Module = "TicketResolutions",
-                AffectedTable = "TicketResolutions"
-            };
-
-            _context.Add(activity);
-            await _context.SaveChangesAsync();
+           
 
             TempData["MESSAGE"] = "Ticket Resolution Details successfully Created";
 
